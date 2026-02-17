@@ -42,4 +42,6 @@ function createTable() {
 
 
 }
-createTable();
+// createTable();
+// to prevent exection
+export default createTable
