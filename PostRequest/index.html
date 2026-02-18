@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Insert Customer</title>
+</head>
+<body>
+
+  <h2>Add Customer</h2>
+<!-- when user clicks submit button send the data 
+filled as a form to http://localhost:3000/add address--> 
+  <form action="http://localhost:3000/add"  method="POST">
+    <label>Name:</label><br>
+    <input type="text" name="name" style="zoom: 200%" required><br><br>
+
+    <label>Address:</label><br>
+    <input type="text" name="address" style="zoom: 200%" required><br><br>
+
+    <label >Company:</label><br>
+    <input type="text" name="company" style="zoom: 200%" required><br><br>
+
+    <button type="submit">Insert Data</button>
+  </form>
+
+</body>
+</html>
