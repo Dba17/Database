@@ -1,8 +1,8 @@
 import db from "./db.js"
 
-const sql = "UPDATE customers SET name = 'Mamush' WHERE customer_id=4 ";
+const sql = "UPDATE customers SET name = ? WHERE customer_id=? ";
 
-db.query(sql, (err, results)=>{
+db.query(sql, ["Samuel", 4], (err, results)=>{
     if (err){
         console.log("Error to Update", err)
         return;//if didn't work stop here 
