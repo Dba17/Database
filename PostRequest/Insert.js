@@ -64,14 +64,14 @@ app.get("/list", (req,res)=>{
       customers.name,
       address.address,
       company.company 
-    FROM customers JOIN address ON customers.customer_id=address.customer_id JOIN company ON customers.customer_id=company.customer_id`;
+    FROM customers JOIN address JOIN company ON customers.customer_id=address.customer_id AND customers.customer_id=company.customer_id`;
 
     db.query(sql, (err, results)=>{
         if(err){
             console.log("Erroe to show list");
             return;
         }
-        console.log("Listed successfully")
+        console.table(results)
         res.send(results);
     })
 })
