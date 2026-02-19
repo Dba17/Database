@@ -12,7 +12,7 @@ app.post("/add", (req, res)=>{
     //but take spaces as value so it is not enough
 
     // if (!name || !address || !company) {
-    //     return res.status(400).send("❌ All fields are required");
+    //     return res.send(" All fields are required");
     // }
 
 
