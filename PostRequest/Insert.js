@@ -59,7 +59,13 @@ app.post("/add", (req, res)=>{
 });
 
 app.get("/list", (req,res)=>{
-    const sql = `SELECT* FROM customers`;
+    const sql = `SELECT 
+      customers.customer_id AS id, 
+      customers.name,
+      address.address,
+      company.company 
+    FROM customers JOIN address ON customers.customer_id=address.customer_id JOIN company ON customers.customer_id=company.customer_id`;
+
     db.query(sql, (err, results)=>{
         if(err){
             console.log("Erroe to show list");
