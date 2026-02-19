@@ -25,7 +25,7 @@ app.post("/add", (req, res)=>{
 
     //simpler way
     if (!name.trim() || !address.trim() || !company.trim()) {
-        return res.status(400).send("❌ Fields cannot be empty");
+        return res.send("Fields cannot be empty");
     }
 
 
