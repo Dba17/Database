@@ -58,6 +58,19 @@ app.post("/add", (req, res)=>{
     });
 });
 
+app.get("/list", (req,res)=>{
+    const sql = `SELECT* FROM customers`;
+    db.query(sql, (err, results)=>{
+        if(err){
+            console.log("Erroe to show list");
+            return;
+        }
+        console.log("Listed successfully")
+        res.send(results);
+    })
+})
+
+
 app.listen(3000, ()=>{
     console.log("app is runing at http://localhost:3000")
 })
