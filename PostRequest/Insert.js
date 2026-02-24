@@ -58,23 +58,33 @@ app.post("/add", (req, res)=>{
     });
 });
 
-app.get("/list", (req,res)=>{
-    const sql = `SELECT 
-      customers.customer_id AS id, 
-      customers.name,
-      address.address,
-      company.company 
-    FROM customers JOIN address JOIN company ON customers.customer_id=address.customer_id AND customers.customer_id=company.customer_id`;
+// app.get("/list", (req,res)=>{
+//     const sql = `SELECT 
+//       customers.customer_id AS id, 
+//       customers.name,
+//       address.address,
+//       company.company 
+//     FROM customers JOIN address JOIN company ON customers.customer_id=address.customer_id AND customers.customer_id=company.customer_id`;
 
-    db.query(sql, (err, results)=>{
-        if(err){
-            console.log("Erroe to show list");
-            return;
-        }
-        console.table(results)
-        res.send(results);
-    })
-})
+//     db.query(sql, (err, results)=>{
+//         if(err){
+//             console.log("Erroe to show list");
+//             return;
+//         }
+//         console.table(results)
+//         res.send(results);
+//     })
+// })
+app.get("/customers", (req, res) => {
+	db.query(
+		"SELECT customers.customer_id AS id, customers.name, address.address, company.company FROM customers JOIN address JOIN company ON customers.customer_id = address.customer_id AND customers.customer_id = company.customer_id",
+		(err, results, fields) => {
+			if (err) console.log("Error During selection", err);
+			console.table(results);
+			res.send(results);
+		}
+	);
+});
 
 
 app.listen(3000, ()=>{
