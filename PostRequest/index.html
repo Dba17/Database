@@ -1,58 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <title>Insert Customer</title>
-</head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-<body>
-<div class="d-flex justify-content-around">
-  <button class="btn btn-success" type="button" onclick="displayForm('new', 'list', 'edit', 'delete')">New</button>
-  <button class="btn btn-primary" type="button" onclick="displayForm('list', 'new', 'edit', 'delete')">List</button>
-  <button class="btn btn-warning" type="button" onclick="displayForm('edit', 'new', 'list', 'delete')">Edit</button>
-  <button class="btn btn-danger" type="button" onclick="displayForm('delete', 'new', 'list', 'edit')">Delete</button>
-</div>
+  <head>
+    <title>Insert Customer</title>
+  </head>
+  
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous"
+  />
 
-<section class="new" > 
-  <h2>Add Customer</h2>
-  <!-- when user clicks submit button send the data filled as a form to http://localhost:3000/add address--> 
-  <form action="http://localhost:3000/add"  method="POST" >
-    <label>Name:</label><br>
-    <input type="text" name="name" style="zoom: 200%" required><br><br>
+  <body>
+  
+    <div class="d-flex justify-content-around">
+      <button
+        class="btn btn-success"
+        type="button"
+        onclick="displayForm('new', 'list', 'edit', 'delete')"
+      >
+        New
+      </button>
+      <button
+        class="btn btn-primary"
+        type="button"
+        onclick="displayForm('list', 'new', 'edit', 'delete')"
+      >
+        List
+      </button>
+      <button
+        class="btn btn-warning"
+        type="button"
+        onclick="displayForm('edit', 'new', 'list', 'delete')"
+      >
+        Edit
+      </button>
+      <button
+        class="btn btn-danger"
+        type="button"
+        onclick="displayForm('delete', 'new', 'list', 'edit')"
+      >
+        Delete
+      </button>
+    </div>
 
-    <label>Address:</label><br>
-    <input type="text" name="address" style="zoom: 200%" required><br><br>
+    <section class="new">
+      <h2>Add Customer</h2>
+      <!-- when user clicks submit button send the data filled as a form to http://localhost:3000/add address-->
+      <form action="http://localhost:3000/add" method="POST">
+        <label>Name:</label><br />
+        <input
+          type="text"
+          name="name"
+          style="zoom: 200%"
+          required
+        /><br /><br />
 
-    <label >Company:</label><br>
-    <input type="text" name="company" style="zoom: 200%" required><br><br>
+        <label>Address:</label><br />
+        <input
+          type="text"
+          name="address"
+          style="zoom: 200%"
+          required
+        /><br /><br />
 
-    <button type="submit">Insert Data</button>
-  </form>
-</section>
+        <label>Company:</label><br />
+        <input
+          type="text"
+          name="company"
+          style="zoom: 200%"
+          required
+        /><br /><br />
 
-<section class="list" style="display: none;">
-</section>
+        <button type="submit">Insert Data</button>
+      </form>
+    </section>
 
-<section class="edit" style="display: none;">
-  <h1>Update customer info</h1>
-  <form id="newForm" style="zoom: 180%;">
-    <label for="name">ID:</label><br>
-    <input type="text" name="id"><br>
-    <label for="name">NewName</label><br>
-    <input type="text" name="UpdatedName"><br><br>
-    <button>Submit NewName</button>
-  </form>
-</section>
+    <section class="list" style="display: none"></section>
 
-<section class="delete" style="display: none;">
-  <h1>Dlete user</h1>
-  <form style="zoom: 180%;">
-    <label for="">UserID:</label><br>
-    <input type="text" name="delete-user"><br>
-    <button>Delete User</button>
-  </form>
-</section>
+    <section class="edit" style="display: none">
+      <h1>Update customer info</h1>
+      <form id="newForm" style="zoom: 180%">
+        <label for="name">ID:</label><br />
+        <input type="text" name="id" /><br />
+        <label for="name">NewName</label><br />
+        <input type="text" name="UpdatedName" /><br /><br />
+        <button>Submit NewName</button>
+      </form>
+    </section>
 
+    <section class="delete" style="display: none">
+      <h1>Dlete user</h1>
+      <form style="zoom: 180%">
+        <label for="">UserID:</label><br />
+        <input type="text" name="delete-user" /><br />
+        <button>Delete User</button>
+      </form>
+    </section>
 
-<script src="./script.js"></script>
-</body>
+    <script src="./script.js"></script>
+  </body>
 </html>
